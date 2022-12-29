@@ -60,4 +60,8 @@ nav a {
   color: #fff;
   margin-left: 10px;
 }
+.router-link-active {
+  color: yellow;
+  text-decoration: underline;
+}
 </style>
