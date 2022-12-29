@@ -16,9 +16,9 @@
       </div>
     </header>
 
-    <div class="container">
+    <main class="container">
       <!-- Inhalt -->
-    </div>
+    </main>
 </template>
 
 <style>
