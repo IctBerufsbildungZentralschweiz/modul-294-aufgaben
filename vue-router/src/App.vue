@@ -11,7 +11,6 @@
           <!-- Navigation -->
           <a href="#">Home</a>
           <a href="#">Über uns</a>
-          <a href="#">Kontakt</a>
         </nav>
       </div>
     </header>
