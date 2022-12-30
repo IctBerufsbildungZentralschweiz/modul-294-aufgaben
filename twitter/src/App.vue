@@ -213,6 +213,7 @@ a {
 
 .composer__textarea {
   color: inherit;
+  font-family: inherit;
   font-size: 1.4rem;
   background: transparent;
   padding: 5px 20px 0;
