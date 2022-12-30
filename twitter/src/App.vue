@@ -19,10 +19,6 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
             <IconLogin/>
             Login
           </a>
-          <a href="#">
-            <IconLogin/>
-            Logout
-          </a>
         </nav>
       </aside>
       <main class="content">
