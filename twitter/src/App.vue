@@ -1,9 +1,7 @@
 <script setup>
-import { RouterView } from 'vue-router'
 import IconLogin from './components/icons/IconLogin.vue'
 import IconHome from './components/icons/IconHome.vue'
-import SparklesIcon from './components/icons/SparklesIcon.vue'
-</script>
+import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
 
 <template>
   <div class="container">
@@ -14,15 +12,15 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
         </div>
         <nav class="nav">
           <a href="#" class="router-link-active">
-            <IconHome />
+            <IconHome/>
             Stream
           </a>
           <a href="#">
-            <IconLogin />
+            <IconLogin/>
             Login
           </a>
           <a href="#">
-            <IconLogin />
+            <IconLogin/>
             Logout
           </a>
         </nav>
@@ -31,7 +29,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
 
         <div class="login-info">
           <div class="login-info__icon">
-            <SparklesIcon />
+            <SparklesIcon/>
           </div>
           <div class="login-info__content">
             <h2 class="login-info__heading">
@@ -47,7 +45,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
 
         <section class="composer">
           <label class="composer__prompt">Was geht?</label>
-          <textarea maxlength="160" class="composer__textarea" placeholder="Verfasse einen TwIT..." />
+          <textarea maxlength="160" class="composer__textarea" placeholder="Verfasse einen TwIT..."/>
           <div class="composer__actions">
             <div class="composer__stats stats">
               <span class="stats__counter">0</span>
@@ -60,9 +58,9 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
         </section>
 
         <section class="stream">
-          <div class="tweet" v-for="tweet in [1,2,3,4,5,6]">
+          <div class="tweet" v-for="tweet in [1, 2, 3, 4, 5, 6, 7, 8, 9 ]">
             <div class="tweet__avatar">
-              <img :src="`https://i.pravatar.cc/100?u=${tweet}`" alt="" />
+              <img :src="`https://i.pravatar.cc/100?u=${tweet}`" alt=""/>
             </div>
             <div class="tweet__content">
               <div class="tweet__header">
@@ -81,7 +79,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
       <aside class="sidebar sidebar--right">
         <section class="widget">
           <h2 class="widget__heading">
-            Top 5
+            Top User
           </h2>
 
           <ul class="content-list">
@@ -133,19 +131,21 @@ body {
 }
 
 .container {
-  width: 1120px;
+  width: 1100px;
   max-width: 100%;
   min-height: 100vh;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 620px 1fr;
+  grid-template-columns: 220px auto 260px;
 }
 
 .logo {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  font-weight: 500;
   padding: 20px 0;
 
   background: linear-gradient(to bottom, #fb7185, #e11d48);
@@ -153,6 +153,10 @@ body {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.logo strong {
+  font-weight: 800;
 }
 
 .content {
@@ -265,6 +269,7 @@ a {
   display: inline-flex;
   align-items: center;
   transition: background .2s ease-out;
+  white-space: nowrap;
 }
 
 .btn--disabled {
@@ -276,6 +281,7 @@ a {
   background: #e11d48;
   color: #fff;
 }
+
 .btn--primary:hover {
   background: #f43f5e;
 }
