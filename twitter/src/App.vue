@@ -1,15 +1,19 @@
 <script setup>
 import IconLogin from './components/icons/IconLogin.vue'
 import IconHome from './components/icons/IconHome.vue'
-import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
+import SparklesIcon from './components/icons/SparklesIcon.vue'
+</script>
 
 <template>
   <div class="container">
     <div class="grid">
       <aside class="sidebar sidebar--left">
+        <!-- Logo -->
         <div class="logo">
           Tw<strong>IT</strong>ter
         </div>
+
+        <!-- Navigation -->
         <nav class="nav">
           <a href="#" class="router-link-active">
             <IconHome/>
@@ -23,7 +27,8 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
       </aside>
       <main class="content">
 
-        <div class="login-info">
+        <!-- Login Info -->
+        <section class="login-info">
           <div class="login-info__icon">
             <SparklesIcon/>
           </div>
@@ -37,8 +42,9 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
               </a>
             </div>
           </div>
-        </div>
+        </section>
 
+        <!-- Composer -->
         <section class="composer">
           <label class="composer__prompt">Was geht?</label>
           <textarea maxlength="160" class="composer__textarea" placeholder="Verfasse einen TwIT..."/>
@@ -53,7 +59,9 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
           </div>
         </section>
 
+        <!-- Stream -->
         <section class="stream">
+          <!-- Tweet -->
           <div class="tweet" v-for="tweet in [1, 2, 3, 4, 5, 6, 7, 8, 9 ]">
             <div class="tweet__avatar">
               <img :src="`https://i.pravatar.cc/100?u=${tweet}`" alt=""/>
@@ -72,7 +80,9 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
           </div>
         </section>
       </main>
+
       <aside class="sidebar sidebar--right">
+        <!-- Top User Widget -->
         <section class="widget">
           <h2 class="widget__heading">
             Top User
@@ -91,6 +101,8 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'</script>
             </li>
           </ul>
         </section>
+
+        <!-- Neue User Widget -->
         <section class="widget">
           <h2 class="widget__heading">
             Neue User
