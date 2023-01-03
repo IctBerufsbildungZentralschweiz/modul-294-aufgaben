@@ -127,6 +127,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
 </template>
 
 <style>
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -279,6 +280,8 @@ a {
   align-items: center;
   transition: background .2s ease-out;
   white-space: nowrap;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .btn[disabled] {
@@ -302,6 +305,10 @@ a {
 
 .btn--secondary:hover {
   background: rgba(255, 255, 255, .3);
+}
+
+.btn--block {
+  width: 100%;
 }
 
 .tweet {
@@ -418,5 +425,62 @@ a {
 .content-list__text {
   font-size: .9rem;
   line-height: 1.25;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.login h2 {
+  font-size: 1.3rem;
+  margin: 0 0 20px;
+}
+
+.login-wrapper {
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #1e293b;
+  padding: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: .95rem;
+  margin-bottom: .6rem;
+  color: #cbd5e1;
+}
+
+.form-input {
+  width: 100%;
+  background: #1e293b;
+  color: #f8fafc;
+  appearance: none;
+  border: 1px solid #334155;
+  height: 2.6rem;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+.form-input::placeholder {
+  color: #cbd5e1;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #cbd5e1;
+}
+
+.form-group + .form-group {
+  margin-top: 1.5rem;
+}
+
+.form-error {
+  color: #e11d48;
+  font-size: .8rem;
+  margin-top: .5rem;
 }
 </style>
