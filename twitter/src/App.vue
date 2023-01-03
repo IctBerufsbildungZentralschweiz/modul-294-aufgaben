@@ -483,4 +483,9 @@ a {
   font-size: .8rem;
   margin-top: .5rem;
 }
+
+.loading {
+  text-align: center;
+  margin-top: 5rem;
+}
 </style>
