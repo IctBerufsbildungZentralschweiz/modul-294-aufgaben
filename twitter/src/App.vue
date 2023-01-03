@@ -53,7 +53,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
               <span class="stats__counter">0</span>
               <span class="stats__max">/ 160</span>
             </div>
-            <button class="btn btn--primary btn--disabled">
+            <button disabled class="btn btn--primary">
               TwIT veröffentlichen
             </button>
           </div>
@@ -281,7 +281,7 @@ a {
   white-space: nowrap;
 }
 
-.btn--disabled {
+.btn[disabled] {
   opacity: 0.5;
   pointer-events: none;
 }
