@@ -439,7 +439,7 @@ a {
   width: 100%;
   margin: 0 auto;
   border: 1px solid #1e293b;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .form-label {
