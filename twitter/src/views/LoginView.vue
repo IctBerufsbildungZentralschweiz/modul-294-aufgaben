@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <section class="login-wrapper">
-      <form action="#" class="login-form">
+      <form action="#" class="login-form" autocomplete="off">
         <div class="form-group">
           <label class="form-label" for="username">Benutzername</label>
           <input class="form-input" type="text" id="username" />
