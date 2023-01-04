@@ -6,7 +6,7 @@
           <label class="form-label" for="email">E-Mail</label>
           <input class="form-input" type="email" id="email" />
           <div class="form-error">
-            Unbekannter Benutzer
+            Ungültige E-Mail
           </div>
         </div>
         <div class="form-group">
