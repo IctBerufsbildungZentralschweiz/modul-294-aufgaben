@@ -3,10 +3,10 @@
     <section class="login-wrapper">
       <form action="#" class="login-form" autocomplete="off">
         <div class="form-group">
-          <label class="form-label" for="username">Benutzername</label>
-          <input class="form-input" type="text" id="username" />
+          <label class="form-label" for="email">E-Mail</label>
+          <input class="form-input" type="email" id="email" />
           <div class="form-error">
-            Unbekannter Benutzername
+            Unbekannter Benutzer
           </div>
         </div>
         <div class="form-group">
