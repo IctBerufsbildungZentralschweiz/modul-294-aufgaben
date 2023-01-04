@@ -1,8 +1,6 @@
 <template>
   <div class="login">
     <section class="login-wrapper">
-      <h2>Login</h2>
-
       <form action="#" class="login-form">
         <div class="form-group">
           <label class="form-label" for="username">Benutzername</label>

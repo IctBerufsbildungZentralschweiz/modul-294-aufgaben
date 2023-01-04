@@ -434,11 +434,6 @@ a {
   height: 80vh;
 }
 
-.login h2 {
-  font-size: 1.3rem;
-  margin: 0 0 20px;
-}
-
 .login-wrapper {
   max-width: 360px;
   width: 100%;
