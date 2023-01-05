@@ -1,8 +1,6 @@
-// https://docs.cypress.io/api/introduction/api.html
-
 describe('B1', () => {
-  it('In den Tweet-Beispieldaten wird Franzi Musterfrau als Autorin angezeigt', () => {
+  it('Max Mustermann wird nicht mehr überall als Autor angezeigt', () => {
     cy.visit('/')
-    cy.contains('.tweet__author', 'Franzi Musterfrau')
+    cy.contains('.tweet__author', 'Max Mustermann').should('not.exist')
   })
 })
