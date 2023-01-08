@@ -45,7 +45,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
         </section>
 
         <!-- Composer -->
-        <section class="composer">
+        <form class="composer">
           <label class="composer__prompt">Was geht?</label>
           <textarea maxlength="160" class="composer__textarea" placeholder="Verfasse einen Tweet..."/>
           <div class="composer__actions">
@@ -57,7 +57,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
               Tweet veröffentlichen
             </button>
           </div>
-        </section>
+        </form>
 
         <!-- Stream -->
         <section class="stream">
@@ -210,6 +210,7 @@ a {
 
 .composer {
   position: relative;
+  display: block;
 }
 
 .composer__prompt {
