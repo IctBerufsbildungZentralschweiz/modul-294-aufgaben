@@ -1,32 +1,8 @@
-import stream from './_stream.json'
 import { useAuth } from './auth'
 
 const backend = 'http://modul-294-backend.lndo.site/twitter'
 
 const {token, setToken} = useAuth()
-
-async function request (url, options = {}) {
-    const headers = {
-        'Content-Type': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest',
-    }
-
-    if (token.value) {
-        headers['Authorization'] = 'Bearer ' + token.value
-    }
-
-    const response = await fetch(backend + url, {headers, ...options})
-
-    if (response.ok) {
-        return response.json()
-    } else if (response.status === 422) {
-        const data = await response.json()
-
-        throw new ValidationError('validation failed', data.errors)
-    } else {
-        throw new Error(`Server error: ${await response.text()}`)
-    }
-}
 
 // Lädt alle Tweets vom Backend.
 export async function fetchStream () {
@@ -66,9 +42,11 @@ export async function loginUser (email, password) {
         body: JSON.stringify({ email, password }),
     })
 
-    if (response.token) {
-        setToken(response.token)
+    if (!response.token) {
+        throw new Error('Login failed due to an unknown error')
     }
+
+    setToken(response.token)
 
     return response.token
 }
@@ -92,6 +70,29 @@ export async function checkAuth () {
     } catch (error) {
         setToken('')
         return false
+    }
+}
+
+async function request (url, options = {}) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+    }
+
+    if (token.value) {
+        headers['Authorization'] = 'Bearer ' + token.value
+    }
+
+    const response = await fetch(backend + url, {headers, ...options})
+
+    if (response.ok) {
+        return response.json()
+    } else if (response.status === 422) {
+        const data = await response.json()
+
+        throw new ValidationError('validation failed', data.errors)
+    } else {
+        throw new Error(`Server error: ${await response.text()}`)
     }
 }
 

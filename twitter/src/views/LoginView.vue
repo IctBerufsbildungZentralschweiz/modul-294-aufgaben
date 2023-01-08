@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <section class="login-wrapper">
-      <form action="#" class="login-form" autocomplete="off">
+      <form action="#" class="login-form" autocomplete="off" novalidate>
         <div class="form-group">
           <label class="form-label" for="email">E-Mail</label>
           <input class="form-input" type="email" id="email" />
