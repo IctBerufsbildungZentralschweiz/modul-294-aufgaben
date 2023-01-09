@@ -37,15 +37,29 @@ describe('G2', () => {
     it('Der Stream wird nach dem Posten eines Tweets neu geladen', () => {
         login()
 
-        cy.intercept('POST', '/twitter/tweets', {
-            statusCode: 200, body: { data: { id: 1 } }
+        cy.intercept('POST', '/twitter/tweets', req => {
+            req.reply({
+                statusCode: 200,
+                delay: 500,
+                body: { data: { id: 1 } }
+            })
         }).as('post')
+
+        cy.intercept('GET', '/twitter/tweets', req => {
+            req.reply({
+                statusCode: 200,
+                delay: 500,
+                body: { data: [{ id: 1, text: 'Updated', likes: 6, created_at: '2023-01-06T00:00:00Z', user: { id: 1, name: 'Author' } }] }
+            })
+        }).as('updatedTweets')
 
         cy.get('.composer__textarea').type('Hello World')
         cy.get('.composer .btn').click()
 
         cy.wait('@post')
 
-        cy.wait('@getTweets')
+        cy.wait('@updatedTweets')
+
+        cy.get('.tweet').should('have.length', 1).and('contain', 'Updated')
     })
 })

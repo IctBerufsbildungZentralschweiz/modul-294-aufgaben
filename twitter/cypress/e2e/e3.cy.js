@@ -7,11 +7,13 @@ describe('E3', () => {
                         {
                             id: 1,
                             text: 'Test Tweet 1',
+                            likes: 6,
                             created_at: '2023-01-01T12:00:00Z',
                             user: {id: 1, name: 'Test User 1'}
                         },
                         {
                             id: 2,
+                            likes: 6,
                             text: 'Test Tweet 2',
                             created_at: '2023-01-01T12:00:00Z',
                             user: {id: 2, name: 'Test User 2'}
