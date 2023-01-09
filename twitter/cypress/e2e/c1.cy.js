@@ -9,7 +9,7 @@ describe('C1', () => {
     cy.get('.login').should('contain.text', 'Login')
   })
 
-  it('Das <SparklesIcon> in der ".login-info" ist immer noch sichtbar', () => {
+  it('Das <IconSparkles> in der ".login-info" ist immer noch sichtbar', () => {
     cy.visit('/')
     cy.get('.sparkles-icon').should('be.visible')
   })

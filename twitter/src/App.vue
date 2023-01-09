@@ -1,7 +1,7 @@
 <script setup>
 import IconLogin from './components/icons/IconLogin.vue'
 import IconHome from './components/icons/IconHome.vue'
-import SparklesIcon from './components/icons/SparklesIcon.vue'
+import IconSparkles from './components/icons/IconSparkles.vue'
 </script>
 
 <template>
@@ -30,7 +30,7 @@ import SparklesIcon from './components/icons/SparklesIcon.vue'
         <!-- Login Info -->
         <section class="login-info">
           <div class="login-info__icon">
-            <SparklesIcon/>
+            <IconSparkles/>
           </div>
           <div class="login-info__content">
             <h2 class="login-info__heading">

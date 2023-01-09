@@ -2,40 +2,40 @@ import { useAuth } from './auth'
 
 const backend = 'http://modul-294-backend.lndo.site/twitter'
 
-const {token, setToken} = useAuth()
+const { token, setToken } = useAuth()
 
 // Lädt alle Tweets vom Backend.
 export async function fetchStream () {
     const response = await request('/tweets')
 
-    return response.data;
+    return response.data
 }
 
-// Daten erstellen
+// Erstellt einen Tweet.
 export async function createTweet (text) {
     const response = await request('/tweets', {
         method: 'POST',
-        body: JSON.stringify({text}),
+        body: JSON.stringify({ text }),
     })
 
-    return response.data;
+    return response.data
 }
 
 // Lädt aktivste User.
 export async function fetchTopUsers () {
     const response = await request('/users/top')
 
-    return response.data;
+    return response.data
 }
 
 // Lädt neuste User.
 export async function fetchNewUsers () {
     const response = await request('/users/new')
 
-    return response.data;
+    return response.data
 }
 
-// Sendet das Login-Formular ans backend.
+// Sendet das Login-Formular ans Backend.
 export async function loginUser (email, password) {
     const response = await request(`/login`, {
         method: 'POST',
@@ -73,6 +73,16 @@ export async function checkAuth () {
     }
 }
 
+// Liked einen Tweet.
+export async function likeTweet (id) {
+    const response = await request(`/tweets/${id}/like`, {
+        method: 'POST',
+    })
+
+    return response.data
+}
+
+// Generische Request-Funktion.
 async function request (url, options = {}) {
     const headers = {
         'Content-Type': 'application/json',
@@ -83,7 +93,7 @@ async function request (url, options = {}) {
         headers['Authorization'] = 'Bearer ' + token.value
     }
 
-    const response = await fetch(backend + url, {headers, ...options})
+    const response = await fetch(backend + url, { headers, ...options })
 
     if (response.ok) {
         return response.json()
@@ -95,6 +105,7 @@ async function request (url, options = {}) {
         throw new Error(`Server error: ${await response.text()}`)
     }
 }
+
 
 class ValidationError {
     message
