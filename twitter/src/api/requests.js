@@ -1,6 +1,6 @@
 import { useAuth } from './auth'
 
-const backend = 'http://modul-294-backend.lndo.site/twitter'
+const backend = 'https://backend.m294.ict-bz.ch/twitter'
 
 const { token, setToken } = useAuth()
 
