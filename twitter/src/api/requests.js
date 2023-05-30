@@ -63,10 +63,7 @@ export async function checkAuth () {
             setToken(response.token)
         }
 
-        return {
-            user: response.user,
-            token,
-        }
+        return response
     } catch (error) {
         setToken('')
         return false
